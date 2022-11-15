@@ -14,7 +14,7 @@ const Input = ({ onEnter }) => {
   };
 
   return (
-    <div className='urlinput--placeholder'>
+    <div className='urlinput__placeholder'>
       <input autoFocus className="urlinput" type="text" placeholder="Eg. https://dummyjson.com/products" onKeyUp={handleKeyup} />
     </div>
   )

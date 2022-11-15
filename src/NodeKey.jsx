@@ -1,13 +1,13 @@
 import React from 'react'
 
 const NodeKey = ({ label, toggle, toggleable }) => {
-  const className = ['node--key'];
+  const className = ['node__key'];
 
   if (toggleable) {
-    className.push("node--toggled--key")
+    className.push("node__toggled-key")
   }
   if (toggle) {
-    className.push("node--toggled--key--active")
+    className.push("node__toggled-key--active")
   }
 
   return (

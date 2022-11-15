@@ -1,9 +1,10 @@
 import React from 'react'
 
 const NodeCount = ({ value }) => {
-  const nodeType = Array.isArray(value) ? 'array' : 'object';
+  const nodeCount = Array.isArray(value) ? value.length : Object.keys(value).length;
+
   return (
-    <i className="node--count">{(nodeType === 'array' ? value.length : Object.keys(value).length)}</i>
+    <i className="node__count">{nodeCount}</i>
   )
 }
 

@@ -1,14 +1,14 @@
 import React from 'react'
 
 const NodeValue = ({ value }) => {
-  const className = ['node--value']
+  const className = ['node__value']
 
   if (typeof value === "string") {
-    className.push("node--value--string")
+    className.push("node__value--string")
   } else if (typeof value === "number") {
-    className.push("node--value--number")
+    className.push("node__value--number")
   } else {
-    className.push("node--value--boolean")
+    className.push("node__value--boolean")
   }
 
   return (

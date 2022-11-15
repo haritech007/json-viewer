@@ -9,7 +9,7 @@ const NodeWrapper = ({ label, value }) => {
 
   return (
     <>
-      <div className="node--toggle" onClick={(e) => { e.stopPropagation(); setToggle(!toggle) }}>
+      <div className="node__toggle" onClick={(e) => { e.stopPropagation(); setToggle(!toggle) }}>
         <NodeKey label={label} toggle={toggle} toggleable />
         {!toggle && <NodeTypeSymbol value={value} position="opening" />}
         {!toggle && <NodeCount value={value} />}

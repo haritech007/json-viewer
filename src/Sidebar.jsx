@@ -6,7 +6,7 @@ const Sidebar = ({ copyright, children }) => {
       <h1 style={{ margin: '0 0 0 0' }}>Backtrace Assigment</h1>
       <p>Unstructured JSON viewer assignment given by Saucelabs.</p>
       <div>{children}</div>
-      <div className='sidebar--copyright'>{copyright}</div>
+      <div className='sidebar__copyright'>{copyright}</div>
     </div>
   )
 }
