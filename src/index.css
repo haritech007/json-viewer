@@ -2,8 +2,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --font-base: 14px;
+  --border-color: #e1e1e1;
+}
+
 html {
-  font-size: 12px;
+  font-size: var(--font-base);
 }
 
 body {

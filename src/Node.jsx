@@ -3,7 +3,8 @@ import NodeKey from "./NodeKey";
 import NodeValue from "./NodeValue";
 import NodeWrapper from "./NodeWrapper";
 
-const Node = ({ data }) => {
+const Node = ({ data, search }) => {
+  // console.log(data)
   const id = useId();
 
   return Object.entries(data).map((item, index) => {
@@ -12,13 +13,17 @@ const Node = ({ data }) => {
     if (typeof value === "object") {
       return (
         <div className="node" key={`${id}-${index}`}>
-          <NodeWrapper label={key} value={value} />
+          <NodeWrapper search={search} label={key} value={value} />
         </div>
       )
     } else {
-      return <div className="node" key={`${id}-${index}`}>
-        <NodeKey label={key} />
-        <NodeValue value={value} />
+      // console.log(search)
+      const searchedKey = search ? key.toString().toLowerCase().includes(search.toLowerCase()) : false;
+      const searchedValue = search ? value.toString().toLowerCase().includes(search.toLowerCase()) : false;
+      // console.log(searchedKey, searchedValue)
+      return <div className={`node`} key={`${id}-${index}`}>
+        <NodeKey label={key} searched={searchedKey} />
+        <NodeValue value={value} searched={searchedValue} />
       </div>
     }
   });

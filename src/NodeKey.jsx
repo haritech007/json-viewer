@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NodeKey = ({ label, toggle, toggleable }) => {
+const NodeKey = ({ label, toggle, toggleable, searched }) => {
   const className = ['node__key'];
 
   if (toggleable) {
@@ -8,6 +8,9 @@ const NodeKey = ({ label, toggle, toggleable }) => {
   }
   if (toggle) {
     className.push("node__toggled-key--active")
+  }
+  if (searched) {
+    className.push("node--highlighted")
   }
 
   return (

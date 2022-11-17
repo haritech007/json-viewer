@@ -1,9 +1,10 @@
-import './App.css';
 import Input from './Input';
 import { useState } from 'react';
 import JsonViewer from './JsonViewer';
 import Sidebar from './Sidebar';
 import Recents from './Recents';
+import Activity from './Activity';
+import './App.css';
 
 function App() {
   const [json, setJson] = useState(null);
@@ -27,13 +28,21 @@ function App() {
     handleOnEnter(item)
   }
 
+  const [jsonSearch, setJsonSearch] = useState('');
+  const handleOnSearch = search => {
+    setJsonSearch(search);
+  };
+
   return (
     <div className='app'>
       <Sidebar copyright={`by Hari Mohan Thakur, emailharimohan@gmail.com`}>
         <Input onEnter={handleOnEnter} />
         <Recents recents={recents} onRecentClick={handleRecentClick} />
       </Sidebar>
-      <JsonViewer json={json || {}} loading={loading} />
+      <main className='main'>
+        <Activity onSearch={handleOnSearch} />
+        <JsonViewer search={jsonSearch} json={json || {}} loading={loading} />
+      </main>
     </div>
   );
 }

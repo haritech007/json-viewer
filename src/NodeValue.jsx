@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NodeValue = ({ value }) => {
+const NodeValue = ({ value, searched }) => {
   const className = ['node__value']
 
   if (typeof value === "string") {
@@ -9,6 +9,9 @@ const NodeValue = ({ value }) => {
     className.push("node__value--number")
   } else {
     className.push("node__value--boolean")
+  }
+  if (searched) {
+    className.push("node--highlighted")
   }
 
   return (
