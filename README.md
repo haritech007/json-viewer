@@ -1,5 +1,5 @@
 # react-json-viewer
-JSON explorer built with react. An assigment given by Saucelabs for interview.
+JSON explorer built with react. An assigment given by Saucelabs for interview. Demo url https://haritech007.github.io/json-viewer/
 
 ### Run the application on local environment
 1. Clone the repository
